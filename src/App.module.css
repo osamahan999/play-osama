@@ -1,7 +1,18 @@
 .App {
   text-align: center;
+
+  height: 100%;
+  width: 100%;
 }
 
+.PageContainer {
+  width: 100vw;
+  height: 100vh;
+
+
+  background-color: rgb(9, 120, 189);
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

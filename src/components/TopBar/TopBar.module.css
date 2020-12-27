@@ -1,0 +1,26 @@
+.TopBar {
+    display: flex;
+    flex-direction: row;
+
+    width: 58%;
+    height: 10vh;
+
+    justify-content: space-between;
+
+
+}
+
+.BackButton {
+    height: 100%;
+    
+    cursor: pointer;
+
+    font-size: 3vw;
+
+}
+
+.Title {
+    height: 100%;
+    font-size: 3vw;
+
+}

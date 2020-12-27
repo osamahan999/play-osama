@@ -1,0 +1,82 @@
+.HomePageRowContainer {
+    width: 100vw;
+    height: 100vh;
+
+
+    background-color: rgb(9, 120, 189);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.HomePageColumnContainer {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.GameName {
+    width: 100vw;
+    height: 30vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    text-align: center;
+
+    font-size: 5vw;
+    color: aliceblue;
+
+}
+.GameOptionsContainer {
+
+    height:70%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+.GameOptions {
+
+    height:100%;
+    width: 30%;
+
+    font-size: 3vw;
+    color: rgb(224, 224, 122);
+
+    column-gap: 2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.Option {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height:15%;
+
+
+    cursor: pointer;
+
+}
+
+
+.Option:hover {
+
+    background-color: rgba(62, 84, 180, 0.51)   ;
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear; 
+    color: black;
+}
+.ColumnGap {
+    height: 10%;
+}
