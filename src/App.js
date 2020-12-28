@@ -34,8 +34,8 @@ function App() {
         </div>}
 
       {currentContent == "Age3" &&
-        <div>
-          <PlayPage />
+        <div className={styles.PageContainer}>
+        <PlayPage />
         </div>
       }
 

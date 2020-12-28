@@ -1,4 +1,11 @@
-.Chessboard {
-    width: 70vw;
-    height: 40vh;
+.PlayPage {
+    width: 100vw;
+    height: 100vh;
+}
+
+.ChessboardContaienr {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
