@@ -5,6 +5,7 @@ import styles from './App.module.css';
 import TopBar from "./components/TopBar/TopBar";
 import DifficultyPage from "./pages/DifficultyPage/DifficultyPage";
 import HomePage from "./pages/HomePage/HomePage";
+import PlayPage from "./pages/PlayPage/PlayPage";
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
       { currentContent == "Play" &&
         <div className={styles.PageContainer}>
           <TopBar setContent={(e) => setCurrentContent("")} />
-          <DifficultyPage />
+          <DifficultyPage setContent={(e) => setCurrentContent(e)} />
         </div>}
 
       { currentContent == "Credits" &&
@@ -31,6 +32,12 @@ function App() {
 
           Set div
         </div>}
+
+      {currentContent == "Age3" &&
+        <div>
+          <PlayPage />
+        </div>
+      }
 
     </div>
   );

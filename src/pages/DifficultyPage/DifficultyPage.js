@@ -22,7 +22,7 @@ function DifficultyPage(props) {
                             When Osama had never even heard of Chess
                         </p>
 
-                        <h2 className={styles.AgeButton}>Age 3</h2>
+                        <h2 onClick={() => props.setContent("Age3")} className={styles.AgeButton}>Age 3</h2>
 
 
                     </div>
