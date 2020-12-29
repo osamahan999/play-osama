@@ -10,6 +10,9 @@ import osama4 from '../../assets/Osama4.jpeg';
 
 
 function DifficultyPage(props) {
+
+    const [currentImage, setCurrentImage] = useState(null);
+
     return (
         <div className={styles.DifficultyPageContainer}>
             <div className={styles.DifficultySliderContainer}>
@@ -22,7 +25,11 @@ function DifficultyPage(props) {
                             When Osama had never even heard of Chess
                         </p>
 
-                        <h2 onClick={() => props.setContent("Age3")} className={styles.AgeButton}>Age 3</h2>
+                        <h2 onClick={() => {
+                            props.setContent("DifficultyChosen");
+                            props.setAgeChosen(3);
+                            props.setImage(osama1);
+                        }} className={styles.AgeButton}>Age 3</h2>
 
 
                     </div>
@@ -35,7 +42,11 @@ function DifficultyPage(props) {
                         </p>
 
 
-                        <h2 className={styles.AgeButton}>Age 9</h2>
+                        <h2 onClick={() => {
+                            props.setContent("DifficultyChosen");
+                            props.setAgeChosen(9);
+                            props.setImage(osama2);
+                        }} className={styles.AgeButton}>Age 9</h2>
                     </div>
 
 
@@ -47,7 +58,12 @@ function DifficultyPage(props) {
                         </p>
 
 
-                        <h2 className={styles.AgeButton}>Age 13</h2>
+                        <h2 onClick={() => {
+                            props.setContent("DifficultyChosen");
+                            props.setAgeChosen(13);
+                            props.setImage(osama5);
+
+                        }} className={styles.AgeButton}>Age 13</h2>
                     </div>
 
 
@@ -55,11 +71,16 @@ function DifficultyPage(props) {
                         <img className={styles.Image} src={osama3}></img>
 
                         <p>
-                            I don't know this one is filler, just try to start with a8 on this one.
+                            I don't know this one is filler, just try to start with a3 on this one.
                         </p>
 
 
-                        <h2 className={styles.AgeButton}>Age 16</h2>
+                        <h2 onClick={() => {
+                            props.setContent("DifficultyChosen");
+                            props.setAgeChosen(16);
+                            props.setImage(osama3);
+
+                        }} className={styles.AgeButton}>Age 16</h2>
                     </div>
 
 
@@ -72,7 +93,12 @@ function DifficultyPage(props) {
                         </p>
 
 
-                        <h2 className={styles.AgeButton}>Age 21</h2>
+                        <h2 onClick={() => {
+                            props.setContent("DifficultyChosen");
+                            props.setAgeChosen(21);
+                            props.setImage(osama4);
+
+                        }} className={styles.AgeButton}>Age 21</h2>
                     </div>
 
                 </Carousel>

@@ -10,6 +10,8 @@ import PlayPage from "./pages/PlayPage/PlayPage";
 function App() {
 
   const [currentContent, setCurrentContent] = useState("");
+  const [ageChosen, setAgeChosen] = useState(null);
+  const [image, setImage] = useState(null);
 
   return (
     <div className={styles.App}>
@@ -18,7 +20,7 @@ function App() {
       { currentContent == "Play" &&
         <div className={styles.PageContainer}>
           <TopBar setContent={(e) => setCurrentContent("")} />
-          <DifficultyPage setContent={(e) => setCurrentContent(e)} />
+          <DifficultyPage setImage = {(e) => setImage(e)} setContent={(e) => setCurrentContent(e)} setAgeChosen = {(e) => setAgeChosen(e)} />
         </div>}
 
       { currentContent == "Credits" &&
@@ -33,10 +35,10 @@ function App() {
           Set div
         </div>}
 
-      {currentContent == "Age3" &&
+      {currentContent == "DifficultyChosen" &&
         <div className={styles.PageContainer}>
           <TopBar setContent = {(e) => setCurrentContent("Play")} />
-          <PlayPage />
+          <PlayPage age = {ageChosen} image = {image}/>
         </div>
       }
 
