@@ -12,6 +12,7 @@ function App() {
   const [currentContent, setCurrentContent] = useState("");
   const [ageChosen, setAgeChosen] = useState(null);
   const [image, setImage] = useState(null);
+  const [initialState, setInitialState] = useState(null);
 
   return (
     <div className={styles.App}>
@@ -20,7 +21,12 @@ function App() {
       { currentContent == "Play" &&
         <div className={styles.PageContainer}>
           <TopBar setContent={(e) => setCurrentContent("")} />
-          <DifficultyPage setImage = {(e) => setImage(e)} setContent={(e) => setCurrentContent(e)} setAgeChosen = {(e) => setAgeChosen(e)} />
+          <DifficultyPage 
+          setImage = {(e) => setImage(e)} 
+          setContent={(e) => setCurrentContent(e)} 
+          setAgeChosen = {(e) => setAgeChosen(e)}
+          setInitialState = {(e) => setInitialState(e)}
+          />
         </div>}
 
       { currentContent == "Credits" &&
@@ -38,7 +44,7 @@ function App() {
       {currentContent == "DifficultyChosen" &&
         <div className={styles.PageContainer}>
           <TopBar setContent = {(e) => setCurrentContent("Play")} />
-          <PlayPage age = {ageChosen} image = {image}/>
+          <PlayPage age = {ageChosen} image = {image} initialState = {initialState}/>
         </div>
       }
 

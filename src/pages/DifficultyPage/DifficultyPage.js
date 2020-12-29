@@ -8,7 +8,6 @@ import osama5 from '../../assets/Osama5.jpeg';
 import osama3 from '../../assets/Osama3.jpeg';
 import osama4 from '../../assets/Osama4.jpeg';
 
-
 function DifficultyPage(props) {
 
     const [currentImage, setCurrentImage] = useState(null);
@@ -29,6 +28,7 @@ function DifficultyPage(props) {
                             props.setContent("DifficultyChosen");
                             props.setAgeChosen(3);
                             props.setImage(osama1);
+                            props.setInitialState("rnbqkbnr/ppppqppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
                         }} className={styles.AgeButton}>Age 3</h2>
 
 
@@ -46,6 +46,7 @@ function DifficultyPage(props) {
                             props.setContent("DifficultyChosen");
                             props.setAgeChosen(9);
                             props.setImage(osama2);
+                            props.setInitialState("rnbqkbnr/pprpprpp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
                         }} className={styles.AgeButton}>Age 9</h2>
                     </div>
 
@@ -62,6 +63,7 @@ function DifficultyPage(props) {
                             props.setContent("DifficultyChosen");
                             props.setAgeChosen(13);
                             props.setImage(osama5);
+                            props.setInitialState("rnbqkbnr/pppppppp/8/8/8/8/PPRRRRPP/RNBQKBNR w KQkq - 0 1");
 
                         }} className={styles.AgeButton}>Age 13</h2>
                     </div>
@@ -79,6 +81,7 @@ function DifficultyPage(props) {
                             props.setContent("DifficultyChosen");
                             props.setAgeChosen(16);
                             props.setImage(osama3);
+                            props.setInitialState("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
 
                         }} className={styles.AgeButton}>Age 16</h2>
                     </div>
@@ -97,6 +100,7 @@ function DifficultyPage(props) {
                             props.setContent("DifficultyChosen");
                             props.setAgeChosen(21);
                             props.setImage(osama4);
+                            props.setInitialState("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
 
                         }} className={styles.AgeButton}>Age 21</h2>
                     </div>

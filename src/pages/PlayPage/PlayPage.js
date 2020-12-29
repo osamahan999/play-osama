@@ -2,19 +2,18 @@ import { React, useState, useEffect } from "react";
 
 import styles from './PlayPage.module.css';
 import Chessboard from 'chessboardjsx';
+import player from '../../assets/player-profile-512.webp';
 
-import osama1 from '../../assets/babyOsama.jpeg';
-import osama2 from '../../assets/Osama2.jpeg';
-import osama5 from '../../assets/Osama5.jpeg';
-import osama3 from '../../assets/Osama3.jpeg';
-import osama4 from '../../assets/Osama4.jpeg';
-
+import {getBestMove} from '../../ChessAI/ChessAI';
 
 const Chess = require("chess.js");
 
 
+
+
 function PlayPage(props) {
-    const [initialState] = useState("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+    
+    const [initialState] = useState(props.initialState);
 
     const [chess, setChess] = useState(
         new Chess(initialState)
@@ -23,7 +22,7 @@ function PlayPage(props) {
 
 
     const [gameStateFen, setGameStateFen] = useState(chess.fen());
-    const [windowWidth, setWindowWidth] = useState((window.innerWidth / 1920) * 900);
+    const [windowWidth, setWindowWidth] = useState((window.innerWidth / 1920) * 825);
 
     const handleMove = (move) => {
         if (chess.move(move)) {
@@ -31,7 +30,13 @@ function PlayPage(props) {
                 const moves = chess.moves();
 
                 if (moves.length > 0) {
-                    const computerMove = moves[Math.floor(Math.random() * moves.length)];
+                    let computerMove = null;
+                    if (props.age == 3) computerMove = moves[Math.floor(Math.random() * moves.length)]; 
+                    else if (props.age == 9) computerMove = getBestMove(chess, 1);
+                    else if (props.age == 13) computerMove = getBestMove(chess, 2);
+                    else if (props.age == 16) computerMove = getBestMove(chess, 3);
+                    else if (props.age == 21) computerMove = getBestMove(chess, 4);
+                    else return;
                     chess.move(computerMove);
                     setGameStateFen(chess.fen());
                 } else {
@@ -47,14 +52,19 @@ function PlayPage(props) {
 
     useEffect(() => {
         setGameStateFen(chess.fen());
+
+        
     }, [chess]);
 
+    
 
 
 
 
 
     useEffect(() => {
+
+        
         function handleResize() {
             let currentWidth = window.innerWidth;
             if (currentWidth < 800) setWindowWidth((800 / 1920) * 900);
@@ -73,8 +83,11 @@ function PlayPage(props) {
 
             <div className={styles.ChessboardContainer}>
                 <div className={styles.PlayerContainer}>
-                    You are playing as White
-                    </div>
+                    <img src={player} className={styles.image}></img>
+                    <p>You are playing as White</p>
+                </div>
+
+
                 <Chessboard
                     width={windowWidth}
                     position={gameStateFen}
