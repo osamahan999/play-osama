@@ -17,17 +17,9 @@ function HomePage(props) {
                         Play the game!
                     </div >
 
-                        <div onClick={() => props.setContent("Credits")} className={styles.Option}>
-                            <div className={styles.ColumnGap}></div>
+                        
 
-                        Credits
-                    </div>
-
-                        <div onClick={() => props.setContent("Settings")} className={styles.Option}>
-                            <div className={styles.ColumnGap}></div>
-
-                        Settings
-                    </div>
+                        
 
                     </div>
                 </div>

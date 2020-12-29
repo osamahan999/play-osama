@@ -29,18 +29,6 @@ function App() {
           />
         </div>}
 
-      { currentContent == "Credits" &&
-        <div className={styles.PageContainer}>
-          <TopBar setContent={(e) => setCurrentContent("")} />
-          Cred div
-        </div>}
-      { currentContent == "Settings" &&
-        <div className={styles.PageContainer}>
-          <TopBar setContent={(e) => setCurrentContent("")} />
-
-          Set div
-        </div>}
-
       {currentContent == "DifficultyChosen" &&
         <div className={styles.PageContainer}>
           <TopBar setContent = {(e) => setCurrentContent("Play")} />
