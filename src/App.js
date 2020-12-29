@@ -35,7 +35,8 @@ function App() {
 
       {currentContent == "Age3" &&
         <div className={styles.PageContainer}>
-        <PlayPage />
+          <TopBar setContent = {(e) => setCurrentContent("Play")} />
+          <PlayPage />
         </div>
       }
 
